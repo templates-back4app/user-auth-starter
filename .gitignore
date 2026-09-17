@@ -1,0 +1,6 @@
+web/config.js
+.env
+flutter/.dart_tool/
+flutter/build/
+flutter/.idea/
+flutter/lib/config.dart

@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Stack: HTML + vanilla JavaScript, no framework | File: web/index.html
+     Signup, login, e-mail verification, password reset and logout against a Back4app backend, over REST. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auth starter</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 520px; margin: 48px auto; padding: 0 20px; color: #1a1a19; }
+    h1 { font-size: 28px; margin: 0 0 4px; } h2 { font-size: 18px; margin: 28px 0 8px; }
+    form { display: grid; gap: 8px; margin: 0 0 8px; }
+    input { padding: 10px; font-size: 16px; border: 1px solid #8b8b82; border-radius: 4px; }
+    button { padding: 10px 14px; font-size: 15px; border: 1px solid #8b8b82; border-radius: 4px; background: #f4f4ef; cursor: pointer; }
+    button.primary { background: #1568b8; color: #fff; border-color: #1568b8; }
+    #status { padding: 10px 12px; border-radius: 6px; background: #f4f4ef; min-height: 1.5em; white-space: pre-wrap; font-family: ui-monospace, Menlo, monospace; font-size: 13px; }
+    #status.err { background: #fdecea; color: #b3261e; } #status.ok { background: #e9f5ee; color: #0f6b3f; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; }
+    [hidden] { display: none !important; }
+    small { color: #575752; }
+  </style>
+</head>
+<body>
+  <h1>Auth starter</h1>
+  <small>Every button below is one REST call to the backend. The page never sees a password hash or a server.</small>
+
+  <div id="status"></div>
+
+  <section id="anon">
+    <h2>Sign up</h2>
+    <form id="signup">
+      <input name="username" placeholder="username" autocomplete="username" required>
+      <input name="email" type="email" placeholder="email" autocomplete="email" required>
+      <input name="password" type="password" placeholder="password" autocomplete="new-password" required>
+      <button class="primary">Create account</button>
+    </form>
+
+    <h2>Log in</h2>
+    <form id="login">
+      <input name="username" placeholder="username" autocomplete="username" required>
+      <input name="password" type="password" placeholder="password" autocomplete="current-password" required>
+      <button class="primary">Log in</button>
+    </form>
+
+    <h2>Forgot your password?</h2>
+    <form id="reset">
+      <input name="email" type="email" placeholder="email" required>
+      <button>Send reset e-mail</button>
+    </form>
+  </section>
+
+  <section id="me" hidden>
+    <h2>Logged in</h2>
+    <pre id="user"></pre>
+    <div class="row">
+      <button id="refresh">Refresh (GET /users/me)</button>
+      <button id="verify">Resend verification e-mail</button>
+      <button id="logout" class="primary">Log out</button>
+    </div>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
