@@ -4,7 +4,7 @@
 
 Measured on September 17, 2026: signup in **597 ms**, login in **245 ms**, and the password-reset e-mail in the inbox **1 second** after the request. Every number in the article comes from this exact code.
 
-> Read the article: *How to Add Signup, Login and Password Reset to an App Without Writing an Auth Server* — link added at publication.
+> **Read the article:** [How to Add Signup, Login and Password Reset to an App Without Writing an Auth Server](https://www.back4app.com/blog/add-signup-login-password-reset-without-an-auth-server)
 
 ## Why no auth server
 
