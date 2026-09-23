@@ -1,10 +1,12 @@
 # user-auth-starter
 
+[![Deploy on Back4app](https://img.shields.io/badge/Deploy%20on-Back4app-1568B8?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJMMiA3djEwbDEwIDUgMTAtNVY3eiIvPjwvc3ZnPg==)](https://www.back4app.com/signup?utm_source=github&utm_medium=repo&utm_campaign=user-auth-starter)
+
 **Signup, login, logout, password reset by e-mail and e-mail verification for a web page and a Flutter app, with no auth server of your own.** Six REST calls to a managed [Back4app](https://www.back4app.com/) backend do the whole account system; the code here is 91 lines of vanilla JavaScript, 58 lines of Dart and a 17-line backend rule.
 
 Measured on September 17, 2026: signup in **597 ms**, login in **245 ms**, and the password-reset e-mail in the inbox **1 second** after the request. Every number in the article comes from this exact code.
 
-> **Read the article:** [How to Add Authentication to a Web or Flutter App Without Writing an Auth Server](https://www.back4app.com/blog/add-signup-login-password-reset-without-an-auth-server)
+> **Read the article:** [How to Add Authentication to a Web or Flutter App Without Writing an Auth Server](https://www.back4app.com/blog/add-signup-login-password-reset-without-an-auth-server?utm_source=github&utm_medium=repo&utm_campaign=user-auth-starter)
 
 ## Why no auth server
 
@@ -35,7 +37,7 @@ Hashing passwords, minting and revoking session tokens, sending a reset e-mail w
 
 ## Deploy your own
 
-1. **Create a free backend.** Sign up at [https://www.back4app.com/signup](https://www.back4app.com/signup), then **New App → Build your Backend**. The free plan is enough for everything in this repo.
+1. **Create a free backend.** Sign up at [https://www.back4app.com/signup?utm_source=github&utm_medium=repo&utm_campaign=user-auth-starter](https://www.back4app.com/signup?utm_source=github&utm_medium=repo&utm_campaign=user-auth-starter), then **New App → Build your Backend**. The free plan is enough for everything in this repo.
 2. On the app's **Overview** page copy the App ID and, from the Keys dropdown, the **JavaScript key** (web) or **Client key** (Flutter). These are client keys; shipping them in a page or an app is expected. The Master key in the same dropdown never leaves a server.
 3. **Cloud Code → main.js**: paste `cloud/main.js` and click **Deploy**. Edit the file and deploy a second time (see the last finding above).
 4. Put the keys in `web/config.js` and `flutter/lib/config.dart` (both git-ignored, examples provided) and run the clients below.
@@ -56,7 +58,7 @@ APP_ID=… JS_KEY=… ./auth-check.sh example.com   # the whole flow from curl, 
 
 ## What the backend gives you
 
-A managed Parse Server (7.5.2 at the time of writing) with a database, the REST and GraphQL APIs, Cloud Code for server-side rules, a dashboard with a Database Browser, and the users, sessions, roles and e-mail features this repo relies on. Documentation: [https://www.back4app.com/docs](https://www.back4app.com/docs) · user registration guide: [https://www.back4app.com/docs/get-started/user-registration](https://www.back4app.com/docs/get-started/user-registration).
+A managed Parse Server (7.5.2 at the time of writing) with a database, the REST and GraphQL APIs, Cloud Code for server-side rules, a dashboard with a Database Browser, and the users, sessions, roles and e-mail features this repo relies on. Documentation: [https://www.back4app.com/docs?utm_source=github&utm_medium=repo&utm_campaign=user-auth-starter](https://www.back4app.com/docs?utm_source=github&utm_medium=repo&utm_campaign=user-auth-starter) · user registration guide: [https://www.back4app.com/docs/get-started/user-registration](https://www.back4app.com/docs/get-started/user-registration).
 
 Next step once accounts work: locking down what a logged-in user may read and write, in the companion repo [lockdown-lab](https://github.com/templates-back4app/lockdown-lab).
 
